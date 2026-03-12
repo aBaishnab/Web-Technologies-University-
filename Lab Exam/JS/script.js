@@ -1,7 +1,7 @@
-const display = document.getElementById("display");
-
 function appendToDisplay(input){
-    if(display.value =="Invalid" || display.value =="undefined"){
+    const display = document.getElementById("display");
+
+    if(display.value =="Invalid" || display.value =="undefined" || display.value =="Infinity" || display.value =="NaN"){
         display.value = "";
     }
     display.value += input;
@@ -9,11 +9,15 @@ function appendToDisplay(input){
 }
 
 function clearDisplay(){
+    const display = document.getElementById("display");
+
      display.value = "";
 }
 
 function remove(){
-    if(display.value =="Invalid" || display.value =="undefined"){
+    const display = document.getElementById("display");
+
+    if(display.value =="Invalid" || display.value =="undefined" || display.value =="Infinity" || display.value =="NaN"){
         display.value ="";
         return;
     }
@@ -21,17 +25,16 @@ function remove(){
 }
 
 function calculate(){
+    const display = document.getElementById("display");
+
     try{
-        if(display.value =="Infinity" || display.value =="NaN"){
-            display.value ="undefined";
-        }
         if(display.value.includes("**")){
-        display.value = "Invalid";
-        return;
+            display.value = "Invalid";
+            return;
         }
         else if(display.value.includes("//")){
-        display.value = "Invalid";
-        return;
+            display.value = "Invalid";
+            return;
         }
 
         display.value = eval(display.value);

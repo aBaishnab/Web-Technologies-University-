@@ -36,7 +36,7 @@ button:hover{
 
 #keys{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
     gap: 10px;
     padding: 25px;
 }
