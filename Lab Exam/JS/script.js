@@ -1,4 +1,5 @@
 const display = document.getElementById("display");
+let justCalculated = false;
 
 function appendToDisplay(input){
     if(display.value =="Invalid" || display.value =="undefined"){
@@ -15,6 +16,7 @@ function clearDisplay(){
 function remove(){
     if(display.value =="Invalid" || display.value =="undefined"){
         display.value ="";
+        justCalculated = false;
         return;
     }
     display.value = display.value.slice(0, -1);
@@ -34,11 +36,7 @@ function calculate(){
         return;
         }
 
-
         display.value = eval(display.value);
-        if(display.value =="Infinity" || display.value =="NaN"){
-            display.value ="undefined";
-        }
     }
     catch(error){
         display.value ="Invalid";
